@@ -1,8 +1,7 @@
-import { NativeModules, Platform } from 'react-native';
+import { NativeModules } from 'react-native';
 
 const LINKING_ERROR =
   `The package 'react-native-infrared-interface' doesn't seem to be linked. Make sure: \n\n` +
-  Platform.select({ ios: "- You have run 'pod install'\n", default: '' }) +
   '- You rebuilt the app after installing the package\n' +
   '- You are not using Expo Go\n';
 
@@ -17,6 +16,22 @@ const InfraredInterface = NativeModules.InfraredInterface
       }
     );
 
-export function multiply(a: number, b: number): Promise<number> {
-  return InfraredInterface.multiply(a, b);
+export function hasIrEmitter(): Promise<boolean> {
+  return InfraredInterface.hasIrEmitter();
+}
+
+export function getCarrierFrequencies(): Promise<
+  {
+    minFrequency: number;
+    maxFrequency: number;
+  }[]
+> {
+  return InfraredInterface.getCarrierFrequencies();
+}
+
+export function transmit(
+  carrierFrequency: number,
+  pattern: string
+): Promise<string> {
+  return InfraredInterface.transmit(carrierFrequency, pattern);
 }

@@ -7,10 +7,6 @@ module.exports = {
     android: {
       sourceDir: 'android',
     },
-    ios: {
-      sourceDir: 'ios',
-      automaticPodsInstallation: true,
-    },
   }),
   dependencies: {
     [pkg.name]: {
