@@ -56,7 +56,7 @@ const deviceCommand = '7723 6933 882 186 345 987 162 876 110 188 648';
 
 const transmitResult = await transmit(38000, deviceCommand);
 
-// returns "Transmission completed" string when successfully executed
+// returns true when successfully executed
 ```
 
 ### Example app
