@@ -1,6 +1,6 @@
 {
   "name": "react-native-infrared-interface",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "A React Native interface for using Infrared (IR) transmitter in Android devices",
   "source": "./src/index.tsx",
   "main": "./lib/commonjs/index.js",
