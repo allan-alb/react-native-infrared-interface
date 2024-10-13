@@ -32,6 +32,6 @@ export function getCarrierFrequencies(): Promise<
 export function transmit(
   carrierFrequency: number,
   pattern: string
-): Promise<string> {
+): Promise<boolean> {
   return InfraredInterface.transmit(carrierFrequency, pattern);
 }

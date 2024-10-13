@@ -55,7 +55,7 @@ class InfraredInterfaceModule(reactContext: ReactApplicationContext) :
 
       manager!!.transmit(carrierFrequency, convertedPattern)
 
-      promise.resolve("Transmission completed")
+      promise.resolve(true)
     } catch (e: Exception) {
       Log.e("Infrared interface", e.toString())
       promise.reject(e)
